@@ -40,7 +40,7 @@ public class serialport extends CordovaPlugin{
 		@Override
 		public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
 			try{
-				if (action.equals("SerialPort")){
+				if (action.equals("SerialPortCall")){
 					JSONObject arg_object = args.getJSONObject(0);
 					
 					File dev = new File("/dev/"+arg_object.getString("device"));
