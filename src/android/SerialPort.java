@@ -42,7 +42,10 @@ public class SerialPort extends CordovaPlugin{
 			try{
 				if (action.equals("SerialPort")){
 					JSONObject arg_object = args.getJSONObject(0);
-					this.SerialPort(arg_object.getString("device"),arg_object.getInt("baudrate"),arg_object.getInt("flags"));
+					
+					File dev = new File("/dev/"+arg_object.getString("device"));
+					
+					SerialPortCall(dev,arg_object.getInt("baudrate"),arg_object.getInt("flags"));
 					callbackContext.success("siker");
 					return true;
 				}else{
@@ -67,7 +70,7 @@ public class SerialPort extends CordovaPlugin{
         private FileInputStream mFileInputStream;
         private FileOutputStream mFileOutputStream;
 
-        public SerialPort(File device, int baudrate, int flags) throws SecurityException, IOException {
+        public SerialPortCall(File device, int baudrate, int flags) throws SecurityException, IOException {
 
                 /* Check access permission */
                 if (!device.canRead() || !device.canWrite()) {
