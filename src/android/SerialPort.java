@@ -45,7 +45,7 @@ public class SerialPort extends CordovaPlugin{
 					
 					File dev = new File("/dev/"+arg_object.getString("device"));
 					
-					SerialPortCall(dev,arg_object.getInt("baudrate"),arg_object.getInt("flags"));
+					this.SerialPortCall(dev,arg_object.getInt("baudrate"),arg_object.getInt("flags"));
 					callbackContext.success("siker");
 					return true;
 				}else{
