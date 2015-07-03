@@ -70,7 +70,7 @@ public class SerialPort extends CordovaPlugin{
         private FileInputStream mFileInputStream;
         private FileOutputStream mFileOutputStream;
 
-        public SerialPortCall(File device, int baudrate, int flags) throws SecurityException, IOException {
+        public void SerialPortCall(File device, int baudrate, int flags) throws SecurityException, IOException {
 
                 /* Check access permission */
                 if (!device.canRead() || !device.canWrite()) {
