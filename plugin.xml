@@ -21,6 +21,6 @@
             </feature>
         </config-file>
  
-        <source-file src="src/android/SerialPort.java" target-dir="src/hu/tvdr/serialport" />      
+        <source-file src="src/android/serialport.java" target-dir="src/hu/tvdr/serialport" />      
      </platform>          
 </plugin>

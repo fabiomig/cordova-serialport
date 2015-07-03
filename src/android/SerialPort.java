@@ -34,7 +34,7 @@ import java.io.OutputStream;
 
 import android.util.Log;
 
-public class SerialPort extends CordovaPlugin{
+public class serialport extends CordovaPlugin{
 		
 		
 		@Override
