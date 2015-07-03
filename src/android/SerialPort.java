@@ -41,6 +41,7 @@ public class SerialPort extends CordovaPlugin{
 		public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
 			try{
 				if (action.equals("SerialPort")){
+					JSONObject arg_object = args.getJSONObject(0);
 					this.SerialPort(arg_object.getString("device"),arg_object.getInt("baudrate"),arg_object.getInt("flags"));
 					callbackContext.success("siker");
 					return true;
