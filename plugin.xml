@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+           id="hu.tvdr.serialport"
+      version="0.1.0">
+    <name>Calendar</name>
+    <description>Sample PhoneGap serialport Plugin</description>
+    <license>MIT</license>
+    <keywords>phonegap,serialport</keywords>
+ 
+ 
+    <js-module src="www/serialport.js" name="Serialport">
+        <clobbers target="window.serialport" />
+    </js-module>
+ 
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="Serialport">
+                <param name="android-package" value="hu.tvdr.serialport.Serialport"/>
+            </feature>
+        </config-file>
+ 
+        <source-file src="src/android/SerialPort.java" target-dir="src/hu/tvdr/serialport" />      
+     </platform>          
+</plugin>
